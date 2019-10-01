@@ -1,10 +1,12 @@
 package com.twu.biblioteca;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BibliotecaApp {
     // Book storage
     ArrayList<Book> bookList = new ArrayList<Book>();
+    ArrayList<String> menuOptions = new ArrayList<String>();
 
     // Returns the welcome message
     public String welcomeMessage(){
@@ -14,6 +16,11 @@ public class BibliotecaApp {
     // Returns the listOfBooks
     private ArrayList getBookList(){
         return bookList;
+    }
+
+    // Display menu options
+    public ArrayList menuOptions(){
+        return menuOptions;
     }
 
     // Prints the list of books
@@ -32,7 +39,10 @@ public class BibliotecaApp {
         bib.bookList.add(new Book("The Outsiders","S.E. Hinton","1967"));
         bib.bookList.add(new Book("Rebecca","Daphne du Maurier","1938"));
 
+        // Populate menu with options
+        bib.menuOptions.add("List of Books");
+
         System.out.println(bib.welcomeMessage());
-        bib.printBookList(bib.getBookList());
+        System.out.println(bib.menuOptions().get(0));
     }
 }

@@ -9,7 +9,7 @@ public class BookTest {
 
     @Test
     public void shouldPrintaBook() {
-        String expected = "The Shining by Stephen King, 1977";
+        String expected = "The Shining by Stephen King , 1977";
         assertEquals(expected, book.toString());
     }
 }

@@ -15,7 +15,7 @@ public class Book {
 
     // Print book description method
     public String toString(){
-        String bookDescription = this.title + " by " + this.author + ", " + this.yearOfPublication;
+        String bookDescription = this.title + " by " + this.author + " , " + this.yearOfPublication;
         return bookDescription;
     }
 

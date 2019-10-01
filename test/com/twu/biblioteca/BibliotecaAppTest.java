@@ -20,4 +20,9 @@ public class BibliotecaAppTest {
         assertEquals(new ArrayList<Book>(),bib.bookList);
     }
 
+    @Test
+    public void shouldReturnMenuOption(){
+        bib.menuOptions.add("List of Books");
+        assertEquals("List of Books",bib.menuOptions().get(0));
+    }
 }
