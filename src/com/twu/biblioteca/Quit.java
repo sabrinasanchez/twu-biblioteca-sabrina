@@ -11,4 +11,9 @@ public class Quit implements Command{
     public void execute() {
         ba.setSTATE(0);
     }
+
+    @Override
+    public void displayUserOptions() {
+        System.out.println("(Q) Quit");
+    }
 }

@@ -13,4 +13,9 @@ public class CheckOut implements Command {
     public void execute() {
         librarian.checkOutCustomerItem(bibItem);
     }
+
+    @Override
+    public void displayUserOptions() {
+        System.out.println("(O) Check out");
+    }
 }

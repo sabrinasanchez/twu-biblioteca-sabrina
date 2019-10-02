@@ -13,4 +13,9 @@ public class CheckIn implements Command {
     public void execute() {
         librarian.checkInCustomerItem(bibItem);
     }
+
+    @Override
+    public void displayUserOptions() {
+        System.out.println("(I) Check In");
+    }
 }

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class BibliotecaApp {
     private int STATE = 1; // Default to running
 
-    // Set state
+    // Getter and Setter for app state
     public void setSTATE(int n) {
         this.STATE = n;
     }
@@ -17,8 +17,8 @@ public class BibliotecaApp {
     }
 
     // Book storage
-    ArrayList<Book> bookList = new ArrayList<Book>();// MOVED TO LIBRARIAN
-    ArrayList<String> menuOptions = new ArrayList<String>();
+    /*ArrayList<Book> bookList = new ArrayList<Book>();// MOVED TO LIBRARIAN
+    ArrayList<String> menuOptions = new ArrayList<String>();*/
 
     // Returns the welcome message
     public String welcomeMessage(){
@@ -26,7 +26,7 @@ public class BibliotecaApp {
     }
 
     // Returns the listOfBooks
-    private ArrayList getBookList(){
+    /*private ArrayList getBookList(){
         return bookList;
     }
 
@@ -40,17 +40,18 @@ public class BibliotecaApp {
         for(Book b : bookList){
             System.out.println(b.toString());
         }
-    }
+    }*/
 
     public static void main(String[] args) {
-        // Create biblioteca instance
-        BibliotecaApp bib = new BibliotecaApp();
-
+        // Instantiations
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        Librarian librarian = new Librarian();
+        
         // Create a scanner
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
 
         // Populate list with books
-        bib.bookList.add(new Book("The Shining","Stephen King","1977"));
+        /*bib.bookList.add(new Book("The Shining","Stephen King","1977"));
         bib.bookList.add(new Book("The Outsiders","S.E. Hinton","1967"));
         bib.bookList.add(new Book("Rebecca","Daphne du Maurier","1938"));
 
@@ -67,6 +68,6 @@ public class BibliotecaApp {
                 bib.printBookList(bib.bookList);
             }
             choice = scanner.next();
-        }
+        }*/
     }
 }

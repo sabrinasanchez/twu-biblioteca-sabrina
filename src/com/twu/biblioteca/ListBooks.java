@@ -11,4 +11,9 @@ public class ListBooks implements Command{
     public void execute() {
         librarian.displayList();
     }
+
+    @Override
+    public void displayUserOptions() {
+        System.out.println("(L) List of Books");
+    }
 }
