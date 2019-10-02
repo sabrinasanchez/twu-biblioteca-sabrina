@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
     // Book storage
-    ArrayList<Book> bookList = new ArrayList<Book>();
+    ArrayList<Book> bookList = new ArrayList<Book>();// MOVED TO LIBRARIAN
     ArrayList<String> menuOptions = new ArrayList<String>();
 
     // Returns the welcome message

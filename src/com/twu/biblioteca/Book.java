@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class Book {
+public class Book implements BibItem{
     // Fields
     private String title;
     private String author;
@@ -13,10 +13,19 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
-    // Print book description method
+    // Return book description method
     public String toString(){
         String bookDescription = this.title + " by " + this.author + " , " + this.yearOfPublication;
         return bookDescription;
     }
 
+    @Override
+    public void display() {
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String getItemName() {
+        return this.title;
+    }
 }
