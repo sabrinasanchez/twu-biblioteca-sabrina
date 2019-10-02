@@ -12,6 +12,10 @@ public class BibliotecaApp {
         this.STATE = n;
     }
 
+    public int getSTATE(){
+        return this.STATE;
+    }
+
     // Book storage
     ArrayList<Book> bookList = new ArrayList<Book>();// MOVED TO LIBRARIAN
     ArrayList<String> menuOptions = new ArrayList<String>();

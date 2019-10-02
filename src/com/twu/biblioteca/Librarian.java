@@ -22,7 +22,7 @@ public class Librarian {
 
     public String checkOutCustomerItem(BibItem checkOutItem){ // Returns message to notify customer of successful/unsuccessful check out
         if(this.bibItemsList.containsKey(checkOutItem.getItemName())){
-            this.bibItemsList.get(checkOutItem.getItemName());
+            this.bibItemsList.remove(checkOutItem.getItemName());
             return "Thank you! Enjoy the book.";
         }
         return "Sorry, that book is not available.";
