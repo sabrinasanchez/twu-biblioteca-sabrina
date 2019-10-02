@@ -28,4 +28,11 @@ public class Librarian {
         return "Sorry, that book is not available.";
     }
 
+    public String displayList(){
+        String list = "";
+        for(String title : bibItemsList.keySet()){
+            list+=bibItemsList.get(title).toString()+"\n";
+        }
+        return list;
+    }
 }

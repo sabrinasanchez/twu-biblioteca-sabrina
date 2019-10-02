@@ -44,4 +44,16 @@ public class LibrarianTest {
 
         assertEquals("Sorry, that book is not available.",result);
     }
+
+    @Test
+    public void shouldReturnAllBibItems(){
+        Book testBook = new Book("The Shining","Stephen King","1977");
+        Book testBook2 = new Book("The Haunting of Hill House","Shirley Jackson","1959");
+
+        librarian.checkInCustomerItem(testBook);
+        librarian.checkInCustomerItem(testBook2);
+
+        assertEquals("The Haunting of Hill House by Shirley Jackson , 1959\nThe Shining by Stephen King , 1977\n"
+                ,librarian.displayList());
+    }
 }
