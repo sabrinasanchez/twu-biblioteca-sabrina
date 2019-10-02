@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BibliotecaApp {
+    private int STATE = 1; // Default to running
+
+    // Set state
+    public void setSTATE(int n) {
+        this.STATE = n;
+    }
+
     // Book storage
     ArrayList<Book> bookList = new ArrayList<Book>();// MOVED TO LIBRARIAN
     ArrayList<String> menuOptions = new ArrayList<String>();
