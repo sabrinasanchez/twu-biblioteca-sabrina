@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BibliotecaApp {
     // Book storage
@@ -34,6 +35,9 @@ public class BibliotecaApp {
         // Create biblioteca instance
         BibliotecaApp bib = new BibliotecaApp();
 
+        // Create a scanner
+        Scanner scanner = new Scanner(System.in);
+
         // Populate list with books
         bib.bookList.add(new Book("The Shining","Stephen King","1977"));
         bib.bookList.add(new Book("The Outsiders","S.E. Hinton","1967"));
@@ -44,5 +48,14 @@ public class BibliotecaApp {
 
         System.out.println(bib.welcomeMessage());
         System.out.println(bib.menuOptions().get(0));
+        String choice = scanner.next();
+
+        // Menu choice functionality
+        while(!choice.equals("Q")){
+            if(choice.equals("L")){
+                bib.printBookList(bib.bookList);
+            }
+            choice = scanner.next();
+        }
     }
 }
