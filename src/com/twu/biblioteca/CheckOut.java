@@ -15,7 +15,7 @@ public class CheckOut implements Command {
     }
 
     @Override
-    public void displayUserOptions() {
+    public void displayUserOption() {
         System.out.println("(O) Check out");
     }
 }

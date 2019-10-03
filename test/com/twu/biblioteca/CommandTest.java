@@ -7,15 +7,6 @@ import static org.junit.Assert.*;
 public class CommandTest {
 
     @Test
-    public void shouldSetStateToZero() {
-        BibliotecaApp app = new BibliotecaApp();
-        Quit q = new Quit(app);
-        q.execute();
-
-        assertEquals(0, app.getSTATE());
-    }
-
-    @Test
     public void shouldSuccessfullyCheckInItem() {
         Librarian librarian = new Librarian();
         Book book = new Book("Test", "Sabrina Sanchez", "2019");

@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class BibliotecaAppTest {
     BibliotecaApp bib = new BibliotecaApp();
-
+/*
     @Test
     public void shouldReturnWelcomeMessage() {
         String result = bib.welcomeMessage();
@@ -24,5 +24,5 @@ public class BibliotecaAppTest {
     public void shouldReturnMenuOption(){
         bib.menuOptions.add("List of Books");
         assertEquals("List of Books",bib.menuOptions().get(0));
-    }
+    }*/
 }

@@ -2,5 +2,5 @@ package com.twu.biblioteca;
 
 public interface Command {
     public void execute();
-    public void displayUserOptions();
+    public void displayUserOption();
 }

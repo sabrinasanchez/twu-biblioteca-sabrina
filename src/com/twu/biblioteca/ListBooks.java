@@ -9,11 +9,11 @@ public class ListBooks implements Command{
 
     @Override
     public void execute() {
-        librarian.displayList();
+        System.out.println(librarian.displayList());
     }
 
     @Override
-    public void displayUserOptions() {
+    public void displayUserOption() {
         System.out.println("(L) List of Books");
     }
 }
