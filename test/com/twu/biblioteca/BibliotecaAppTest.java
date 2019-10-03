@@ -7,5 +7,4 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class BibliotecaAppTest {
-    BibliotecaApp bib = new BibliotecaApp();
 }
