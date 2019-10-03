@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /*Manages the list of biblioteca items and displays it*/
@@ -27,6 +26,18 @@ public class Librarian {
         }
         return "Sorry, that book is not available.";
     }
+
+    public void populateBibItemList(){
+        // Populate list with books
+        Book b1 = new Book("The Shining","Stephen King","1977");
+        Book b2 = new Book("The Outsiders","S.E. Hinton","1967");
+        Book b3 = new Book("Rebecca","Daphne du Maurier","1938");
+
+        this.checkInCustomerItem(b1);
+        this.checkInCustomerItem(b2);
+        this.checkInCustomerItem(b3);
+    }
+
 
     public String displayList(){
         String list = "";
