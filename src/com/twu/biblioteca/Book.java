@@ -1,5 +1,5 @@
 package com.twu.biblioteca;
-
+/*Used to create instances of books*/
 public class Book implements BibItem{
     // Fields
     private String title;

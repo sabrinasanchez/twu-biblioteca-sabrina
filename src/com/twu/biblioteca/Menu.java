@@ -1,5 +1,5 @@
 package com.twu.biblioteca;
-
+/*Displays menu of options and welcome message*/
 public class Menu {
 
     public void displayMenu(){
@@ -11,4 +11,5 @@ public class Menu {
         System.out.println("(I) Check-in");
         System.out.println("(Q) Quit");
     }
+
 }

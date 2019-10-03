@@ -24,38 +24,11 @@ public class BibliotecaApp {
 
         // Reading user input
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        InputHandler inputHandler = new InputHandler(reader);
         String choice = "";
 
         menu.displayMenu();
+        inputHandler.beginReading();
 
-        // Begin app
-        while(!choice.equals("Q")){
-            choice = reader.readLine();
-            if(choice.equals("L")){
-                System.out.print(librarian.displayList());
-            }
-            else if(choice.equals("O")){ // User selects to check-out
-                System.out.println("Please enter title: ");
-                String title = reader.readLine();
-                System.out.println(librarian.checkOutCustomerItem(title));
-            }
-            else if(choice.equals("I")){ // User selects to check-in
-                System.out.println("Please enter title: ");
-                String title = reader.readLine();
-
-                System.out.println("Please enter author: ");
-                String author = reader.readLine();
-
-                System.out.println("Please enter year of publication: ");
-                String yob = reader.readLine();
-
-                Book book = new Book(title,author,yob);
-                System.out.println(librarian.checkInCustomerItem(book));
-            }
-            else{ // User selects invalid option
-                System.out.println("Please select a valid option!");
-                menu.displayMenu();
-            }
-        }
     }
 }

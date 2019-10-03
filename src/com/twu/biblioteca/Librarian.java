@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+/*Manages the list of biblioteca items and displays it*/
 public class Librarian {
     private Map<String,BibItem> bibItemsList = new HashMap<String, BibItem>();
 
