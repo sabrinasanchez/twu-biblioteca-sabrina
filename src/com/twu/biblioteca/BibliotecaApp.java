@@ -6,11 +6,12 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
+
+
     // Driver method
     public static void main(String[] args) {
         // Instantiations
         Librarian librarian = new Librarian();
-        ListBooks listBooks = new ListBooks(librarian);
 
         // Populate list with books
         Book b1 = new Book("The Shining","Stephen King","1977");
@@ -25,11 +26,28 @@ public class BibliotecaApp {
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
+        Menu menu = new Menu();
+        menu.displayMenu();
         while(!choice.equals("Q")){
             choice = scanner.next();
             if(choice.equals("L")){
-                listBooks.execute();
+
+            }
+            else if(choice.equals("O")){
+
+            }
+            else if(choice.equals("I")){
+                System.out.println("Please enter title: ");
+                String title = scanner.nextLine();
+
+                System.out.println("Please enter author: ");
+                String author = scanner.nextLine();
+
+                System.out.println("Please enter year of publication: ");
+                String yob = scanner.nextLine();
+
+                Book book = new Book(title,author,yob);
+                librarian.checkInCustomerItem(book);
             }
 
         }
