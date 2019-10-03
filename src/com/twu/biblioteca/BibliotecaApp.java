@@ -1,17 +1,17 @@
 package com.twu.biblioteca;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class BibliotecaApp {
 
-
-
     // Driver method
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Instantiations
         Librarian librarian = new Librarian();
+        Menu menu = new Menu();
 
         // Populate list with books
         Book b1 = new Book("The Shining","Stephen King","1977");
@@ -22,34 +22,40 @@ public class BibliotecaApp {
         librarian.checkInCustomerItem(b2);
         librarian.checkInCustomerItem(b3);
 
-        // Create a scanner
-        Scanner scanner = new Scanner(System.in);
+        // Reading user input
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String choice = "";
 
-        Menu menu = new Menu();
         menu.displayMenu();
+
+        // Begin app
         while(!choice.equals("Q")){
-            choice = scanner.next();
+            choice = reader.readLine();
             if(choice.equals("L")){
-
+                System.out.print(librarian.displayList());
             }
-            else if(choice.equals("O")){
-
-            }
-            else if(choice.equals("I")){
+            else if(choice.equals("O")){ // User selects to check-out
                 System.out.println("Please enter title: ");
-                String title = scanner.nextLine();
+                String title = reader.readLine();
+                System.out.println(librarian.checkOutCustomerItem(title));
+            }
+            else if(choice.equals("I")){ // User selects to check-in
+                System.out.println("Please enter title: ");
+                String title = reader.readLine();
 
                 System.out.println("Please enter author: ");
-                String author = scanner.nextLine();
+                String author = reader.readLine();
 
                 System.out.println("Please enter year of publication: ");
-                String yob = scanner.nextLine();
+                String yob = reader.readLine();
 
                 Book book = new Book(title,author,yob);
-                librarian.checkInCustomerItem(book);
+                System.out.println(librarian.checkInCustomerItem(book));
             }
-
+            else{ // User selects invalid option
+                System.out.println("Please select a valid option!");
+                menu.displayMenu();
+            }
         }
     }
 }

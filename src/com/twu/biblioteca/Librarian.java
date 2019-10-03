@@ -20,9 +20,9 @@ public class Librarian {
        }
     }
 
-    public String checkOutCustomerItem(BibItem checkOutItem){ // Returns message to notify customer of successful/unsuccessful check out
-        if(this.bibItemsList.containsKey(checkOutItem.getItemName())){
-            this.bibItemsList.remove(checkOutItem.getItemName());
+    public String checkOutCustomerItem(String checkedOutItem){ // Returns message to notify customer of successful/unsuccessful check out
+        if(this.bibItemsList.containsKey(checkedOutItem)){
+            this.bibItemsList.remove(checkedOutItem);
             return "Thank you! Enjoy the book.";
         }
         return "Sorry, that book is not available.";

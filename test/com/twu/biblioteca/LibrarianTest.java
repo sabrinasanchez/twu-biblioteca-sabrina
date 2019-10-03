@@ -33,14 +33,14 @@ public class LibrarianTest {
     public void shouldSuccessfullyCheckOutItem(){
         Book testBook = new Book("The Shining","Stephen King","1977");
         librarian.checkInCustomerItem(testBook);
-        String result = librarian.checkOutCustomerItem(testBook);
+        String result = librarian.checkOutCustomerItem("The Shining");
 
         assertEquals("Thank you! Enjoy the book.",result);
     }
 
     @Test
     public void shouldUnsuccessfullyCheckOutItem(){
-        String result = librarian.checkOutCustomerItem(new Book("The Haunting of Hill House","Shirley Jackson","1959"));
+        String result = librarian.checkOutCustomerItem("The Haunting of Hill House");
 
         assertEquals("Sorry, that book is not available.",result);
     }
