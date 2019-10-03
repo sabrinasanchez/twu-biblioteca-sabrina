@@ -16,7 +16,8 @@ public class InputHandler {
 
     public void beginReading() throws IOException {
         String choice = "";
-        librarian.populateBibItemList();
+        librarian.populateBibItemList(); // Adds books to list for demo
+
         while(!choice.equals("Q")){
             choice = bufferedReader.readLine();
 
