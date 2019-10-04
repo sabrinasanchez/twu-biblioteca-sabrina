@@ -1,0 +1,78 @@
+SQL ASSIGNMENT
+-----------------------------------------------------------------------------------
+1. Who checked out the book 'The Hobbit’?
+-----------------------------------------------------------------------------------
+ANSWER: 
+	Anand Beck
+	
+SQL:
+	SELECT m.name
+	FROM member m, checkout_item c 
+	WHERE m.id = c.member_id AND 
+	c.book_id = 5;
+
+-----------------------------------------------------------------------------------
+2. How many people have not checked out anything?
+-----------------------------------------------------------------------------------
+ANSWER: 
+	37
+
+SQL:
+	SELECT COUNT(m.name)
+	FROM member m
+	WHERE m.id NOT IN (SELECT member_id FROM checkout_item);
+
+-----------------------------------------------------------------------------------
+3. What books and movies aren't checked out?
+-----------------------------------------------------------------------------------
+ANSWER: 
+	1984
+	Catcher in the Rye
+	Crouching Tiger, Hidden Dragon
+	Domain Driven Design
+	Fellowship of the Ring
+	Lawrence of Arabia
+	Office Space
+	Thin Red Line
+	To Kill a Mockingbird
+	Tom Sawyer
+
+SQL:
+	SELECT title FROM book WHERE id IN 
+	(SELECT id FROM book EXCEPT SELECT book_id FROM checkout_item)
+	UNION
+	SELECT title FROM movie WHERE id IN 
+	(SELECT id FROM movie EXCEPT SELECT movie_id FROM checkout_item);
+
+-----------------------------------------------------------------------------------
+4. Add the book 'The Pragmatic Programmer', and add yourself
+as a member. Check out 'The Pragmatic Programmer'. Use your query 
+from question 1 to verify that you have checked it out. Also, 
+provide the SQL used to update the database.
+-----------------------------------------------------------------------------------
+ANSWER: 
+	N/A
+
+SQL:
+	INSERT INTO member VALUES (43, "Sabrina Sanchez");
+	INSERT INTO book VALUES (11, "The Pragmatic Programmer");
+	INSERT INTO checkout_item VALUES (43, 11, NULL);
+
+	SELECT m.name
+	FROM member m, checkout_item c
+	WHERE m.id = c.member_id AND
+	c.book_id = 11;
+
+-----------------------------------------------------------------------------------
+5. Who has checked out more than 1 item? 
+Tip: Research the GROUP BY syntax.
+-----------------------------------------------------------------------------------
+ANSWER: 
+	Anand Beck
+	Frank Smith
+
+SQL:
+	SELECT name
+	FROM checkout_item INNER JOIN member
+	ON checkout_item.member_id = member.id 
+	GROUP BY name HAVING COUNT(member_id) > 1;
