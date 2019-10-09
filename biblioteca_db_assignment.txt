@@ -7,9 +7,9 @@ ANSWER:
 	
 SQL:
 	SELECT m.name
-	FROM member m, checkout_item c 
-	WHERE m.id = c.member_id AND 
-	c.book_id = 5;
+	FROM member m, checkout_item c, book b
+	WHERE m.id = c.member_id AND b.id = c.book_id
+	AND b.title = 'The Hobbit';
 
 -----------------------------------------------------------------------------------
 2. How many people have not checked out anything?
@@ -39,10 +39,10 @@ ANSWER:
 
 SQL:
 	SELECT title FROM book WHERE id IN 
-	(SELECT id FROM book EXCEPT SELECT book_id FROM checkout_item)
+	(SELECT id FROM book EXCEPT SELECT book_id FROM checkout_item WHERE book_id IS NOT NULL)
 	UNION
 	SELECT title FROM movie WHERE id IN 
-	(SELECT id FROM movie EXCEPT SELECT movie_id FROM checkout_item);
+	(SELECT id FROM movie EXCEPT SELECT movie_id FROM checkout_item WHERE movie_id IS NOT NULL);
 
 -----------------------------------------------------------------------------------
 4. Add the book 'The Pragmatic Programmer', and add yourself
