@@ -11,14 +11,17 @@ public class BibliotecaApp {
         // Instantiations
         Librarian librarian = new Librarian();
         Menu menu = new Menu();
+        Login login = new Login();
 
         // Reading user input instantiations
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         InputHandler inputHandler = new InputHandler(reader,librarian);
 
         // Launch app
-        menu.displayMenu();
-        inputHandler.beginReading();
+        if(login.loginApp()){
+            menu.displayMenu();
+            inputHandler.beginReading();
+        }
 
     }
 }

@@ -18,6 +18,11 @@ public class Menu {
         this.menuOptions.add("(Q) Quit");
     }
 
+    // Getter for header -- used in login
+    public String getHeader(){
+        return header;
+    }
+
     // Print menu of options
     public void displayMenu(){
         System.out.println(header);
