@@ -1,10 +1,12 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /*Manages the list of biblioteca items and displays it*/
 public class Librarian {
     private Map<String,BibItem> bibItemsList = new HashMap<String, BibItem>();
+    private Map<String,String> checkoutLog = new HashMap<String, String>();
 
     // Constructor
     Librarian(){
@@ -23,6 +25,7 @@ public class Librarian {
     public String checkInCustomerItem(BibItem checkedInItem){ // Returns message to notify customer of successful/unsuccessful check in
        try{
            this.bibItemsList.put(checkedInItem.getItemName(),checkedInItem);
+
            return "Thank you for returning the item.";
        }catch (Exception e){
            return "That is not a valid item return.";
@@ -31,7 +34,12 @@ public class Librarian {
 
     public String checkOutCustomerItem(String checkedOutItem){ // Returns message to notify customer of successful/unsuccessful check out
         if(this.bibItemsList.containsKey(checkedOutItem)){
+            String s = Login.customerLibraryNumber;
+            
             this.bibItemsList.remove(checkedOutItem);
+
+            checkoutLog.put(s,checkedOutItem);
+
             return "Thank you! Enjoy the item.";
         }
         return "Sorry, that item is not available.";

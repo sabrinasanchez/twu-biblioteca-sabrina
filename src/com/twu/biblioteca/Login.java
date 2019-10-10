@@ -3,9 +3,9 @@ package com.twu.biblioteca;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
 
 public class Login {
+    static String customerLibraryNumber;
 
     // Customers use a Library number: xxx-xxxx and password to login
     public static boolean validateLibraryNumber(String number) {
@@ -25,9 +25,9 @@ public class Login {
 
         while(true){
             System.out.println("Enter library number: ");
-            String inputNumber = reader.readLine();
+            customerLibraryNumber = reader.readLine();
 
-            if(validateLibraryNumber(inputNumber)){
+            if(validateLibraryNumber(customerLibraryNumber)){
                 System.out.println("Enter password: ");
                 String inputPassword = reader.readLine();
 

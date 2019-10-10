@@ -15,6 +15,7 @@ public class Menu {
         this.menuOptions.add("(L) List of Books");
         this.menuOptions.add("(O) Check-out");
         this.menuOptions.add("(I) Check-in");
+        this.menuOptions.add("(P) View Profile");
         this.menuOptions.add("(Q) Quit");
     }
 
