@@ -1,15 +1,39 @@
 package com.twu.biblioteca;
+
+import java.util.ArrayList;
+
 /*Displays menu of options and welcome message*/
 public class Menu {
+    // Fields
+    private String header = "---------------------------------------------------------------------------------\n" +
+        "| Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore! |\n" +
+        "---------------------------------------------------------------------------------";
+    private ArrayList<String> menuOptions = new ArrayList<String>();
 
+    // Constructor
+    Menu(){
+        this.menuOptions.add("(L) List of Books");
+        this.menuOptions.add("(O) Check-out");
+        this.menuOptions.add("(I) Check-in");
+        this.menuOptions.add("(Q) Quit");
+    }
+
+    // Print menu of options
     public void displayMenu(){
-        System.out.println("---------------------------------------------------------------------------------");
-        System.out.println("| Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore! |");
-        System.out.println("---------------------------------------------------------------------------------");
-        System.out.println("(L) List of Books");
-        System.out.println("(O) Check-out");
-        System.out.println("(I) Check-in");
-        System.out.println("(Q) Quit");
+        System.out.println(header);
+        for(String s : menuOptions){
+            System.out.println(s);
+        }
+    }
+
+    // Returns string of menu -- useful for testing
+    public String toString(){
+        StringBuilder sb = new StringBuilder(header+"\n");
+        for(String s : menuOptions){
+            sb.append(s+"\n");
+        }
+
+        return sb.toString();
     }
 
 }

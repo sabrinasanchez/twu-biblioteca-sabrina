@@ -12,13 +12,7 @@ import static org.junit.Assert.*;
 *
 * */
 public class InputHandlerTest {
-    String menu = "---------------------------------------------------------------------------------\n" +
-            "| Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore! |\n" +
-            "---------------------------------------------------------------------------------\n" +
-            "(L) List of Books\n" +
-            "(O) Check-out\n" +
-            "(I) Check-in\n" +
-            "(Q) Quit\n";
+    Menu menu = new Menu();
 
     @Test
     public void shouldSuccessfullyListMenuOptions() throws IOException {
@@ -41,7 +35,7 @@ public class InputHandlerTest {
         } catch (NullPointerException ne){
             // Assert
             String os = output.toString("UTF8");
-            assertEquals(menu+"The Outsiders by S.E. Hinton , 1967\n" +
+            assertEquals(menu.toString()+"The Outsiders by S.E. Hinton , 1967\n" +
                     "Rebecca by Daphne du Maurier , 1938\n", os);
         }
 
@@ -68,7 +62,7 @@ public class InputHandlerTest {
         } catch (NullPointerException ne){
             // Assert
             String os = output.toString("UTF8");
-            assertEquals(menu+"Please enter title: \n" +
+            assertEquals(menu.toString()+"Please enter title: \n" +
                     "Thank you! Enjoy the book.\n", os);
         }
 
@@ -95,7 +89,7 @@ public class InputHandlerTest {
         } catch (NullPointerException ne){
             // Assert
             String os = output.toString("UTF8");
-            assertEquals(menu+"Please enter title: \n" +
+            assertEquals(menu.toString()+"Please enter title: \n" +
                     "Sorry, that book is not available.\n", os);
         }
 
@@ -122,7 +116,7 @@ public class InputHandlerTest {
         } catch (NullPointerException ne){
             // Assert
             String os = output.toString("UTF8");
-            assertEquals(menu+"Please enter title: \n" +
+            assertEquals(menu.toString()+"Please enter title: \n" +
                     "Please enter author: \n" +
                     "Please enter year of publication: \n" +
                     "Thank you for returning the book.\n", os);
