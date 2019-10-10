@@ -15,8 +15,15 @@ public class Book implements BibItem{
 
     // Return book description method
     public String toString(){
-        String bookDescription = this.title + " by " + this.author + " , " + this.yearOfPublication;
-        return bookDescription;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(this.title);
+        sb.append(" by ");
+        sb.append(this.author);
+        sb.append(" , ");
+        sb.append(this.yearOfPublication);
+
+        return sb.toString();
     }
 
     @Override

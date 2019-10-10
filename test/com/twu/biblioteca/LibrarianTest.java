@@ -1,19 +1,10 @@
 package com.twu.biblioteca;
 
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import static org.junit.Assert.*;
 
 public class LibrarianTest {
     Librarian librarian = new Librarian();
-
-   @Test
-    public void shouldReturnBibList() {
-        assertEquals(new HashMap<String, BibItem>(), librarian.getBibItemList());
-    }
 
     @Test
     public void shouldSuccessfullyCheckInItem(){
@@ -46,14 +37,9 @@ public class LibrarianTest {
     }
 
     @Test
-    public void shouldReturnAllBibItems(){
-        Book testBook = new Book("The Shining","Stephen King","1977");
-        Book testBook2 = new Book("The Haunting of Hill House","Shirley Jackson","1959");
+    public void shouldReturntheListOfItems(){
+        String result = librarian.displayList();
 
-        librarian.checkInCustomerItem(testBook);
-        librarian.checkInCustomerItem(testBook2);
-
-        assertEquals("The Haunting of Hill House by Shirley Jackson , 1959\nThe Shining by Stephen King , 1977\n"
-                ,librarian.displayList());
+        assertEquals("The Outsiders by S.E. Hinton , 1967\nRebecca by Daphne du Maurier , 1938\n", result);
     }
 }
