@@ -7,33 +7,33 @@ public class LibrarianTest {
     Librarian librarian = new Librarian();
 
     @Test
-    public void shouldSuccessfullyCheckInItem(){
+    public void shouldSuccessfullyCheckInBook(){
         String result = librarian.checkInCustomerItem(new Book("The Shining","Stephen King","1977"));
 
-        assertEquals("Thank you for returning the book.",result);
+        assertEquals("Thank you for returning the item.",result);
     }
 
     @Test
-    public void shouldUnsuccessfullyCheckInItem(){
+    public void shouldUnsuccessfullyCheckInBook(){
         String result = librarian.checkInCustomerItem(null);
 
-        assertEquals("That is not a valid book return.",result);
+        assertEquals("That is not a valid item return.",result);
     }
 
     @Test
-    public void shouldSuccessfullyCheckOutItem(){
+    public void shouldSuccessfullyCheckOutBook(){
         Book testBook = new Book("The Shining","Stephen King","1977");
         librarian.checkInCustomerItem(testBook);
         String result = librarian.checkOutCustomerItem("The Shining");
 
-        assertEquals("Thank you! Enjoy the book.",result);
+        assertEquals("Thank you! Enjoy the item.",result);
     }
 
     @Test
-    public void shouldUnsuccessfullyCheckOutItem(){
+    public void shouldUnsuccessfullyCheckOutBook(){
         String result = librarian.checkOutCustomerItem("The Haunting of Hill House");
 
-        assertEquals("Sorry, that book is not available.",result);
+        assertEquals("Sorry, that item is not available.",result);
     }
 
     @Test

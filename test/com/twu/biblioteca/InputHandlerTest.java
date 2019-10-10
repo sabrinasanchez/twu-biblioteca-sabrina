@@ -63,7 +63,7 @@ public class InputHandlerTest {
             // Assert
             String os = output.toString("UTF8");
             assertEquals(menu.toString()+"Please enter title: \n" +
-                    "Thank you! Enjoy the book.\n", os);
+                    "Thank you! Enjoy the item.\n", os);
         }
 
     }
@@ -90,7 +90,7 @@ public class InputHandlerTest {
             // Assert
             String os = output.toString("UTF8");
             assertEquals(menu.toString()+"Please enter title: \n" +
-                    "Sorry, that book is not available.\n", os);
+                    "Sorry, that item is not available.\n", os);
         }
 
     }
@@ -119,7 +119,7 @@ public class InputHandlerTest {
             assertEquals(menu.toString()+"Please enter title: \n" +
                     "Please enter author: \n" +
                     "Please enter year of publication: \n" +
-                    "Thank you for returning the book.\n", os);
+                    "Thank you for returning the item.\n", os);
         }
 
     }

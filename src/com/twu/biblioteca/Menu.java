@@ -5,10 +5,10 @@ import java.util.ArrayList;
 /*Displays menu of options and welcome message*/
 public class Menu {
     // Fields
+    private ArrayList<String> menuOptions = new ArrayList<String>();
     private String header = "---------------------------------------------------------------------------------\n" +
         "| Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore! |\n" +
         "---------------------------------------------------------------------------------";
-    private ArrayList<String> menuOptions = new ArrayList<String>();
 
     // Constructor
     Menu(){

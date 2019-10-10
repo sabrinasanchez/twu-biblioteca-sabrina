@@ -21,18 +21,18 @@ public class Librarian {
     public String checkInCustomerItem(BibItem checkedInItem){ // Returns message to notify customer of successful/unsuccessful check in
        try{
            this.bibItemsList.put(checkedInItem.getItemName(),checkedInItem);
-           return "Thank you for returning the book.";
+           return "Thank you for returning the item.";
        }catch (Exception e){
-           return "That is not a valid book return.";
+           return "That is not a valid item return.";
        }
     }
 
     public String checkOutCustomerItem(String checkedOutItem){ // Returns message to notify customer of successful/unsuccessful check out
         if(this.bibItemsList.containsKey(checkedOutItem)){
             this.bibItemsList.remove(checkedOutItem);
-            return "Thank you! Enjoy the book.";
+            return "Thank you! Enjoy the item.";
         }
-        return "Sorry, that book is not available.";
+        return "Sorry, that item is not available.";
     }
 
 

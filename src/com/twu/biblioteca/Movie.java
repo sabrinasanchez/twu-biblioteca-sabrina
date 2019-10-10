@@ -6,6 +6,7 @@ public class Movie implements BibItem{
     private String director;
     private String year;
     private String rating;
+    private final String TYPE = "movie";
 
     // Constructor
     Movie(String name, String director, String year, String rating){
@@ -41,4 +42,5 @@ public class Movie implements BibItem{
     public String getItemName() {
         return this.name;
     }
+
 }
