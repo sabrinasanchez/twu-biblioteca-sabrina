@@ -43,7 +43,7 @@ public class InputHandlerTest {
         }
 
     }
-
+/*
     @Test
     public void shouldSuccessfullyPromptForCheckOutOptionforBook() throws IOException {
         // Set up input stream

@@ -4,12 +4,8 @@
     <list default="true" id="72205ffb-bdd4-4444-a618-68d8778066cf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Librarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Librarian.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaAppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/InputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Librarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/InputHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/InputHandlerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -193,7 +189,7 @@
       <workItem from="1570668893188" duration="2628000" />
       <workItem from="1570672011337" duration="1501000" />
       <workItem from="1570680046442" duration="1253000" />
-      <workItem from="1570716802965" duration="9231000" />
+      <workItem from="1570716802965" duration="12641000" />
     </task>
     <servers />
   </component>

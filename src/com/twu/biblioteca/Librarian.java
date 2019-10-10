@@ -35,7 +35,7 @@ public class Librarian {
     public String checkOutCustomerItem(String checkedOutItem){ // Returns message to notify customer of successful/unsuccessful check out
         if(this.bibItemsList.containsKey(checkedOutItem)){
             String s = Login.customerLibraryNumber;
-            
+
             this.bibItemsList.remove(checkedOutItem);
 
             checkoutLog.put(s,checkedOutItem);

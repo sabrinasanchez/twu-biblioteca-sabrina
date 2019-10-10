@@ -23,6 +23,12 @@ public class InputHandler {
                 System.out.print(librarian.displayList());
             }
 
+            else if(choice.equals("P")){
+                System.out.println("John Smith");
+                System.out.println("thisisatest@gmail.com");
+                System.out.println("1233457676");
+            }
+
             else if(choice.equals("O")){ // User selects to check-out
                 System.out.println("Please enter title: ");
                 String title = bufferedReader.readLine();
