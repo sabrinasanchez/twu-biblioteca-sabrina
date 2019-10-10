@@ -1,4 +1,7 @@
 package com.twu.biblioteca;
+
+import java.util.ArrayList;
+
 /*Used to create instances of books*/
 public class Book implements BibItem{
     // Fields

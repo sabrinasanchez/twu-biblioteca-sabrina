@@ -11,11 +11,13 @@ public class Librarian {
         // Populate list with books
         Book b1 = new Book("The Outsiders","S.E. Hinton","1967");
         Book b2 = new Book("Rebecca","Daphne du Maurier","1938");
-        //Movie m1 = new Movie("The Nightmare Before Christmas","Tim Burton","1993","10");
+        Movie m1 = new Movie("The Nightmare Before Christmas","Tim Burton","1993","10");
+        Movie m2 = new Movie("Psycho","Alfred Hitchcock","1960","10");
 
         this.checkInCustomerItem(b1);
         this.checkInCustomerItem(b2);
-        //this.checkInCustomerItem(m1);
+        this.checkInCustomerItem(m1);
+        this.checkInCustomerItem(m2);
     }
 
     public String checkInCustomerItem(BibItem checkedInItem){ // Returns message to notify customer of successful/unsuccessful check in

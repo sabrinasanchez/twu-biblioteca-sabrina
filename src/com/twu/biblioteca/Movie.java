@@ -1,12 +1,13 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+
 public class Movie implements BibItem{
     // Fields
     private String name;
     private String director;
     private String year;
     private String rating;
-    private final String TYPE = "movie";
 
     // Constructor
     Movie(String name, String director, String year, String rating){
@@ -19,17 +20,9 @@ public class Movie implements BibItem{
 
     // Return book description method
     public String toString(){
-        StringBuilder sb = new StringBuilder();
+        String description = this.name + " directed by " + this.director + " , " + this.year + " | " + this.rating + "/10";
 
-        sb.append(this.name);
-        sb.append(" directed by ");
-        sb.append(this.director);
-        sb.append(" , ");
-        sb.append(this.year);
-        sb.append(" | ");
-        sb.append(this.rating + "/10");
-
-        return sb.toString();
+        return description;
     }
 
     @Override
