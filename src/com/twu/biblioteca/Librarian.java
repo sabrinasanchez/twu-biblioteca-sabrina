@@ -1,59 +1,69 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-/*Manages the list of biblioteca items and displays it*/
+import com.sun.xml.internal.ws.util.UtilException;
+
+/* Manages the list of biblioteca items and displays it */
 public class Librarian {
-    private Map<String,BibItem> bibItemsList = new HashMap<String, BibItem>();
-    private Map<String,String> checkoutLog = new HashMap<String, String>();
+    // Fields
+    private LibraryDirectory lb = new LibraryDirectory();
 
     // Constructor
-    Librarian(){
-        // Populate list with books
-        Book b1 = new Book("The Outsiders","S.E. Hinton","1967");
-        Book b2 = new Book("Rebecca","Daphne du Maurier","1938");
-        Movie m1 = new Movie("The Nightmare Before Christmas","Tim Burton","1993","10");
-        Movie m2 = new Movie("Psycho","Alfred Hitchcock","1960","10");
-
-        this.checkInCustomerItem(b1);
-        this.checkInCustomerItem(b2);
-        this.checkInCustomerItem(m1);
-        this.checkInCustomerItem(m2);
+    Librarian(LibraryDirectory ld){
+        this.lb = lb;
     }
 
-    public String checkInCustomerItem(BibItem checkedInItem){ // Returns message to notify customer of successful/unsuccessful check in
-       try{
-           this.bibItemsList.put(checkedInItem.getItemName(),checkedInItem);
+    public String checkInCustomerItem(String title, String type){ // Returns message to notify customer of successful/unsuccessful check in
+        if(type.equalsIgnoreCase("book") && !lb.getBookList().get(title).checkStatus()){
+            lb.getBookList().get(title).checkIn();
+            return "Thank you for returning the item.";
+        }
+        else if(type.equalsIgnoreCase("movie") && !lb.getMovieList().get(title).checkStatus()){
+            lb.getMovieList().get(title).checkIn();
+            return "Thank you for returning the item.";
+        }
+        else{
+            return "That is not a valid item return.";
+        }
+       /* try{
+            lb.getBookList().put(title,checkedInItem);
 
-           return "Thank you for returning the item.";
-       }catch (Exception e){
-           return "That is not a valid item return.";
-       }
+            return "Thank you for returning the item.";
+         }catch (Exception e){
+            return "That is not a valid item return.";
+         }*/
     }
 
-    public String checkOutCustomerItem(String checkedOutItem){ // Returns message to notify customer of successful/unsuccessful check out
-        if(this.bibItemsList.containsKey(checkedOutItem)){
+    public String checkOutCustomerItem(String title, String type) { // Returns message to notify customer of successful/unsuccessful check out
+        if (type.equalsIgnoreCase("book") && lb.getBookList().get(title).checkStatus()) {
+            lb.getBookList().get(title).checkOut();
+            return "Thank you for returning the item.";
+        }
+        else if (type.equalsIgnoreCase("movie") && lb.getMovieList().get(title).checkStatus()) {
+            lb.getBookList().get(title).checkOut();
+            return "Thank you for returning the item.";
+        }
+        else {
+            return "That is not a valid item return.";
+        }
+    }
+
+    public void diplayBookList(){
+        lb.printMyBookList();
+    }
+
+    public void displayMovieList(){
+        lb.printMovieList();
+    }
+ /*       if(lb.getBookList().containsKey(checkedOutItem)){
             String s = Login.customerLibraryNumber;
 
-            this.bibItemsList.remove(checkedOutItem);
+            lb.getBookList().remove(checkedOutItem);
 
-            checkoutLog.put(s,checkedOutItem);
+            lb.checkoutLog().put(s,checkedOutItem);
 
             return "Thank you! Enjoy the item.";
         }
         return "Sorry, that item is not available.";
     }
-
-
-    public String displayList(){
-        StringBuilder list = new StringBuilder();
-
-        for(String title : bibItemsList.keySet()){
-            list.append(bibItemsList.get(title));
-            list.append("\n");
-        }
-
-        return list.toString();
-    }
+*/
 }

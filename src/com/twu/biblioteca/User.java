@@ -14,5 +14,5 @@ public class User {
         this.email = email;
         this.number = number;
     }
-    
+
 }

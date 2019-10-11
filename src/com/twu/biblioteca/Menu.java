@@ -12,7 +12,8 @@ public class Menu {
 
     // Constructor
     Menu(){
-        this.menuOptions.add("(L) List of Books");
+        this.menuOptions.add("(LB) List of Books");
+        this.menuOptions.add("(LM) List Of Books");
         this.menuOptions.add("(O) Check-out");
         this.menuOptions.add("(I) Check-in");
         this.menuOptions.add("(P) View Profile");

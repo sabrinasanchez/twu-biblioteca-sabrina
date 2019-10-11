@@ -8,6 +8,9 @@ public class Movie implements BibItem{
     private String director;
     private String year;
     private String rating;
+    private final boolean IN = true;
+    private final boolean OUT = false;
+    private boolean status = IN;
 
     // Constructor
     Movie(String name, String director, String year, String rating){
@@ -17,7 +20,19 @@ public class Movie implements BibItem{
         this.rating = rating;
     }
 
+    // Setters
+    public void checkIn(){
+        this.status = IN;
+    }
 
+    public void checkOut(){
+        this.status = OUT;
+    }
+
+    // Getter
+    public boolean checkStatus(){
+        return this.status;
+    }
     // Return book description method
     public String toString(){
         String description = this.name + " directed by " + this.director + " , " + this.year + " | " + this.rating + "/10";

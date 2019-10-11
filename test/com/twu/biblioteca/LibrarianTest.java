@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LibrarianTest {
-    Librarian librarian = new Librarian();
+    /*Librarian librarian = new Librarian();
 
     @Test
     public void shouldSuccessfullyCheckInBook(){

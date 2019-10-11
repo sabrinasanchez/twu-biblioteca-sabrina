@@ -2,10 +2,7 @@ package com.twu.biblioteca;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+
 
 public class InputHandler {
     BufferedReader reader;
@@ -24,8 +21,12 @@ public class InputHandler {
 
             choice = reader.readLine();
 
-            if(choice.equals("L")){
-                System.out.print(librarian.displayList());
+            if(choice.equals("LB")){
+                librarian.diplayBookList();
+            }
+
+            else if(choice.equals("LM")){
+                librarian.displayMovieList();
             }
 
             else if(choice.equals("P")){
@@ -37,7 +38,9 @@ public class InputHandler {
             else if(choice.equals("O")){ // User selects to check-out
                 System.out.println("Please enter title: ");
                 String title = reader.readLine();
-                System.out.println(librarian.checkOutCustomerItem(title));
+                System.out.println("Enter item type (e.g. movie, book, etc.): ");
+                String typeOfItem = reader.readLine();
+                System.out.println(librarian.checkOutCustomerItem(title, typeOfItem));
             }
 
             else if(choice.equals("I")){ // User selects to check-in
@@ -55,7 +58,7 @@ public class InputHandler {
                     String yob = reader.readLine();
 
                     Book book = new Book(title,author,yob);
-                    System.out.println(librarian.checkInCustomerItem(book));
+                    System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
                 }
 
                 else if(typeOfItem.equalsIgnoreCase("movie")) { // returning a movie
@@ -72,7 +75,7 @@ public class InputHandler {
                     String rating = reader.readLine();
 
                     Movie movie = new Movie(title, director, yor, rating);
-                    System.out.println(librarian.checkInCustomerItem(movie));
+                    System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
                 }
 
                 else{
