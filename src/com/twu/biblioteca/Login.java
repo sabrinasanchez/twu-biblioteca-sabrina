@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 
 public class Login {
     static String customerLibraryNumber;
+    BufferedReader reader;
+
+    Login(BufferedReader reader){
+        this.reader = reader;
+    }
 
     // Customers use a Library number: xxx-xxxx and password to login
     public static boolean validateLibraryNumber(String number) {
@@ -20,7 +25,6 @@ public class Login {
     // Function for login run
     public boolean loginApp() throws IOException {
         Menu menu = new Menu();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(menu.getHeader());
 
         while(true){
@@ -31,7 +35,8 @@ public class Login {
                 System.out.println("Enter password: ");
                 String inputPassword = reader.readLine();
 
-                break;
+                if(!inputPassword.equals("")){ break;}
+
             }
             else{
                 System.out.println("Invalid Library Number! Try again (e.g. xxx-xxxx)");

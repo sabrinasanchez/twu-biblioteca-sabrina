@@ -3,6 +3,7 @@ package com.twu.biblioteca;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class BibliotecaApp {
 
@@ -11,11 +12,12 @@ public class BibliotecaApp {
         // Instantiations
         Librarian librarian = new Librarian();
         Menu menu = new Menu();
-        Login login = new Login();
 
         // Reading user input instantiations
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        //Scanner scanner = new Scanner(System.in);
         InputHandler inputHandler = new InputHandler(reader,librarian);
+        Login login = new Login(reader);
 
         // Launch app
         if(login.loginApp()){
