@@ -51,21 +51,21 @@ public class InputHandler {
                     System.out.println("Please enter title: ");
                     String title = reader.readLine();
 
-                    System.out.println("Please enter author: ");
+                    /*System.out.println("Please enter author: ");
                     String author = reader.readLine();
 
                     System.out.println("Please enter year of publication: ");
                     String yob = reader.readLine();
 
-                    Book book = new Book(title,author,yob);
+                    Book book = new Book(title,author,yob);*/
                     System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
                 }
 
                 else if(typeOfItem.equalsIgnoreCase("movie")) { // returning a movie
-                    System.out.println("Please enter name: ");
+                    System.out.println("Please enter title: ");
                     String title = reader.readLine();
 
-                    System.out.println("Please enter director: ");
+                    /*System.out.println("Please enter director: ");
                     String director = reader.readLine();
 
                     System.out.println("Please enter year of release: ");
@@ -74,7 +74,7 @@ public class InputHandler {
                     System.out.println("Please enter rating: ");
                     String rating = reader.readLine();
 
-                    Movie movie = new Movie(title, director, yor, rating);
+                    Movie movie = new Movie(title, director, yor, rating);*/
                     System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
                 }
 

@@ -3,19 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="72205ffb-bdd4-4444-a618-68d8778066cf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/InputHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/InputHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/LibraryDirectory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/LibraryDirectory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibItem.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/InputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Librarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/LibrarianTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/LibrarianTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryDirectory.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +204,9 @@
       <workItem from="1570806502950" duration="7709000" />
       <workItem from="1570818281548" duration="117000" />
       <workItem from="1570819287125" duration="318000" />
-      <workItem from="1570819609321" duration="4767000" />
+      <workItem from="1570819609321" duration="5457000" />
+      <workItem from="1570843314674" duration="18000" />
+      <workItem from="1570986902229" duration="1761000" />
     </task>
     <servers />
   </component>
