@@ -1,6 +1,10 @@
 package com.twu.biblioteca;
 
-/* Manages the list of biblioteca items and displays it */
+/*
+*
+* Manages the list of biblioteca items and displays it
+*
+* */
 public class Librarian {
     // Fields
     private LibraryDirectory lb = new LibraryDirectory();
@@ -11,26 +15,19 @@ public class Librarian {
     }
 
     public String checkInCustomerItem(String title){ // Returns message to notify customer of successful/unsuccessful check in
-            try{
-                lb.checkinUpdate(Login.customerLibraryNumber, title);
+            if(lb.checkinUpdate(Login.customerLibraryNumber, title)){
                 return "Thank you for returning the item.";
             }
 
-            catch(Exception ex){
-                return "That is not a valid item return.";
-            }
+            return "That is not a valid item return.";
     }
 
     public String checkOutCustomerItem(String title) { // Returns message to notify customer of successful/unsuccessful check out
-        try {
-            lb.checkoutUpdate(Login.customerLibraryNumber, title);
+            if(lb.checkoutUpdate(Login.customerLibraryNumber, title)){
+                return "Thank you! Enjoy the item.";
+            }
 
-            return "Thank you! Enjoy the item.";
-        }
-
-        catch (Exception ex){
             return "Sorry, that item is not available.";
-        }
     }
 
     // Prints lists

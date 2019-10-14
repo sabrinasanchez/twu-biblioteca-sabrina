@@ -45,24 +45,6 @@ public class InputHandler {
                 String title = reader.readLine();
 
                 System.out.println(librarian.checkInCustomerItem(title));
-
-                /*if(typeOfItem.equalsIgnoreCase("book")){ // returning a book
-                    System.out.println("Please enter title: ");
-                    String title = reader.readLine();
-
-                    System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
-                }
-
-                else if(typeOfItem.equalsIgnoreCase("movie")) { // returning a movie
-                    System.out.println("Please enter title: ");
-                    String title = reader.readLine();
-
-                    System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
-                }*/
-
-               /* else{
-                    System.out.println("Invalid Item! Try Again.");
-                }*/
             }
 
             else if(!choice.equals("Q")){ // User selects invalid option

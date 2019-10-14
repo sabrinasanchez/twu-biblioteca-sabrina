@@ -34,7 +34,7 @@ public class LibraryDirectory {
         this.usersLog.put("123-abcd", new User("123-4767", "John Winchester", "ghostsandstuff@email.com", "999-2666"));}
 
     // Updates
-    public void checkoutUpdate(String libraryNumber, String title){
+    public boolean checkoutUpdate(String libraryNumber, String title){
 
         if(availableBooks.containsKey(title)){
             // Get user checkout list and add book being checked out
@@ -42,6 +42,7 @@ public class LibraryDirectory {
 
             // Remove book from availableBooks
             availableBooks.remove(title);
+            return true;
         }
 
         else if(availableMovies.containsKey(title)){
@@ -50,10 +51,12 @@ public class LibraryDirectory {
 
             // Remove movie from availableMovies
             availableMovies.remove(title);
+            return true;
         }
+        return false;
     }
 
-    public void checkinUpdate(String libraryNumber, String title){
+    public boolean checkinUpdate(String libraryNumber, String title){
         if(usersLog.get(libraryNumber).getCheckedOutBooks().containsKey(title)){ // if a book is being returned
             // Get user checked in item
             Book returnedBook = usersLog.get(libraryNumber).getCheckedOutBooks().get(title);
@@ -63,6 +66,7 @@ public class LibraryDirectory {
 
             // Add to availableBooks
             availableBooks.put(title, returnedBook);
+            return true;
         }
 
         else if(usersLog.get(libraryNumber).getCheckedOutMovies().containsKey(title)){ // if a movie is being returned
@@ -74,7 +78,9 @@ public class LibraryDirectory {
 
             // Add to availableBooks
             availableMovies.put(title, returnedMovie);
+            return true;
         }
+        return false;
     }
 
     // Getters
