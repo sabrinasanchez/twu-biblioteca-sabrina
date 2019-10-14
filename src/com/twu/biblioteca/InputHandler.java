@@ -30,34 +30,26 @@ public class InputHandler {
             }
 
             else if(choice.equals("P")){
-                System.out.println("John Smith");
-                System.out.println("thisisatest@gmail.com");
-                System.out.println("1233457676");
+                librarian.displayUserProfile();
             }
 
             else if(choice.equals("O")){ // User selects to check-out
                 System.out.println("Please enter title: ");
                 String title = reader.readLine();
-                System.out.println("Enter item type (e.g. movie, book, etc.): ");
-                String typeOfItem = reader.readLine();
-                System.out.println(librarian.checkOutCustomerItem(title, typeOfItem));
+
+                System.out.println(librarian.checkOutCustomerItem(title));
             }
 
             else if(choice.equals("I")){ // User selects to check-in
-                System.out.println("Enter item type (e.g. movie, book, etc.): ");
-                String typeOfItem = reader.readLine();
+                System.out.println("Please enter title: ");
+                String title = reader.readLine();
 
-                if(typeOfItem.equalsIgnoreCase("book")){ // returning a book
+                System.out.println(librarian.checkInCustomerItem(title));
+
+                /*if(typeOfItem.equalsIgnoreCase("book")){ // returning a book
                     System.out.println("Please enter title: ");
                     String title = reader.readLine();
 
-                    /*System.out.println("Please enter author: ");
-                    String author = reader.readLine();
-
-                    System.out.println("Please enter year of publication: ");
-                    String yob = reader.readLine();
-
-                    Book book = new Book(title,author,yob);*/
                     System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
                 }
 
@@ -65,22 +57,12 @@ public class InputHandler {
                     System.out.println("Please enter title: ");
                     String title = reader.readLine();
 
-                    /*System.out.println("Please enter director: ");
-                    String director = reader.readLine();
-
-                    System.out.println("Please enter year of release: ");
-                    String yor = reader.readLine();
-
-                    System.out.println("Please enter rating: ");
-                    String rating = reader.readLine();
-
-                    Movie movie = new Movie(title, director, yor, rating);*/
                     System.out.println(librarian.checkInCustomerItem(title,typeOfItem));
-                }
+                }*/
 
-                else{
+               /* else{
                     System.out.println("Invalid Item! Try Again.");
-                }
+                }*/
             }
 
             else if(!choice.equals("Q")){ // User selects invalid option

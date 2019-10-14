@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import com.sun.xml.internal.ws.util.UtilException;
-
 /* Manages the list of biblioteca items and displays it */
 public class Librarian {
     // Fields
@@ -12,58 +10,43 @@ public class Librarian {
         this.lb = lb;
     }
 
-    public String checkInCustomerItem(String title, String type){ // Returns message to notify customer of successful/unsuccessful check in
-        if(type.equalsIgnoreCase("book") && !lb.getBookList().get(title).checkStatus()){
-            lb.getBookList().get(title).checkIn();
-            return "Thank you for returning the item.";
-        }
-        else if(type.equalsIgnoreCase("movie") && !lb.getMovieList().get(title).checkStatus()){
-            lb.getMovieList().get(title).checkIn();
-            return "Thank you for returning the item.";
-        }
-        else{
-            return "That is not a valid item return.";
-        }
-       /* try{
-            lb.getBookList().put(title,checkedInItem);
+    public String checkInCustomerItem(String title){ // Returns message to notify customer of successful/unsuccessful check in
+            try{
+                lb.checkinUpdate(Login.customerLibraryNumber, title);
+                return "Thank you for returning the item.";
+            }
 
-            return "Thank you for returning the item.";
-         }catch (Exception e){
-            return "That is not a valid item return.";
-         }*/
+            catch(Exception ex){
+                return "That is not a valid item return.";
+            }
     }
 
-    public String checkOutCustomerItem(String title, String type) { // Returns message to notify customer of successful/unsuccessful check out
-        if (type.equalsIgnoreCase("book") && lb.getBookList().get(title).checkStatus()) {
-            lb.getBookList().get(title).checkOut();
-            return "Thank you for returning the item.";
-        }
-        else if (type.equalsIgnoreCase("movie") && lb.getMovieList().get(title).checkStatus()) {
-            lb.getBookList().get(title).checkOut();
-            return "Thank you for returning the item.";
-        }
-        else {
-            return "That is not a valid item return.";
-        }
-    }
-
-    public void diplayBookList(){
-        lb.printMyBookList();
-    }
-
-    public void displayMovieList(){
-        lb.printMovieList();
-    }
- /*       if(lb.getBookList().containsKey(checkedOutItem)){
-            String s = Login.customerLibraryNumber;
-
-            lb.getBookList().remove(checkedOutItem);
-
-            lb.checkoutLog().put(s,checkedOutItem);
+    public String checkOutCustomerItem(String title) { // Returns message to notify customer of successful/unsuccessful check out
+        try {
+            lb.checkoutUpdate(Login.customerLibraryNumber, title);
 
             return "Thank you! Enjoy the item.";
         }
-        return "Sorry, that item is not available.";
+
+        catch (Exception ex){
+            return "Sorry, that item is not available.";
+        }
     }
-*/
+
+    // Prints lists
+    public void diplayBookList(){ lb.printBookList(); }
+
+    public void displayMovieList(){ lb.printMovieList(); }
+
+    // Get user profile
+    public void displayUserProfile(){
+        try{
+            lb.getUsersLog().get(Login.customerLibraryNumber).displayProfile();
+
+        } catch(Exception ex){
+            System.out.println("No user info on file for this account");
+        }
+
+    }
+
 }

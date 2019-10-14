@@ -3,14 +3,14 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 /*Used to create instances of books*/
-public class Book implements BibItem{
+public class Book {
     // Fields
     private String title;
     private String author;
     private String yearOfPublication;
-    private final boolean IN = true;
+   /* private final boolean IN = true;
     private final boolean OUT = false;
-    private boolean status = IN;
+    private boolean status = IN;*/
 
     // Constructor
     Book(String title, String author, String yearOfPublication){
@@ -20,7 +20,7 @@ public class Book implements BibItem{
     }
 
     // Setters
-    public void checkIn(){
+   /* public void checkIn(){
         this.status = IN;
     }
 
@@ -31,29 +31,13 @@ public class Book implements BibItem{
     // Getter
     public boolean checkStatus(){
         return this.status;
-    }
+    }*/
 
     // Return book description method
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
+    public void display(){
+        String description = this.title + " by " + this.author + " , " + this.yearOfPublication;
 
-        sb.append(this.title);
-        sb.append(" by ");
-        sb.append(this.author);
-        sb.append(" , ");
-        sb.append(this.yearOfPublication);
-
-        return sb.toString();
-    }
-
-    @Override
-    public void display() {
-        System.out.println(this.toString());
-    }
-
-    @Override
-    public String getItemName() {
-        return this.title;
+        System.out.println(description);
     }
 
 }

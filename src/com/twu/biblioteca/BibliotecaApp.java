@@ -9,7 +9,7 @@ public class BibliotecaApp {
     // Driver method
     public static void main(String[] args) throws IOException {
         // Instantiations
-        LibraryDirectory libraryDirectory = new LibraryDirectory();
+        LibraryDirectory libraryDirectory = null;
         Librarian librarian = new Librarian(libraryDirectory);
         Menu menu = new Menu();
 

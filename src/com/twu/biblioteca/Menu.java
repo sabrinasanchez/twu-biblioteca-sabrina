@@ -2,7 +2,11 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-/*Displays menu of options and welcome message*/
+/*
+*
+* Displays menu of options and welcome message
+*
+* */
 public class Menu {
     // Fields
     private ArrayList<String> menuOptions = new ArrayList<String>();
